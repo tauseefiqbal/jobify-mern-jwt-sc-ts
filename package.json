@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "setup-project": "npm i && cd client && npm i",
+    "build": "cd client && npm install && npm run build",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && npm run dev",
-    "dev": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
