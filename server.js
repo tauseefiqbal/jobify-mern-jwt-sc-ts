@@ -17,6 +17,7 @@ import userRouter from './routes/userRouter.js';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { existsSync } from 'fs';
 
 // middleware
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
@@ -26,7 +27,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
-app.use(express.static(path.resolve(__dirname, './client/dist')));
+
+// Serve static files only if dist folder exists
+const distPath = path.resolve(__dirname, './client/dist');
+if (existsSync(distPath)) {
+  app.use(express.static(distPath));
+}
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
@@ -40,8 +47,16 @@ app.use('/api/v1/jobs', authenticateUser, jobRouter);
 app.use('/api/v1/users', authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
+// Serve React app for all other routes (only if dist exists)
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
+  const indexPath = path.resolve(__dirname, './client/dist', 'index.html');
+  if (existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).json({ 
+      msg: 'Frontend build not found. Please run: npm run build' 
+    });
+  }
 });
 
 app.use(errorHandlerMiddleware);
