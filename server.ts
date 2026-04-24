@@ -8,6 +8,7 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import mongoSanitize from 'express-mongo-sanitize';
+import cors from 'cors';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -24,6 +25,18 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+const allowedOrigins = (process.env.CORS_ORIGIN ?? '')
+  .split(',')
+  .map((o) => o.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin: allowedOrigins.length ? allowedOrigins : true,
+    credentials: true,
+  })
+);
 
 app.use(express.static(path.resolve(__dirname, './client/dist')));
 app.use(cookieParser());

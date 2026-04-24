@@ -32,6 +32,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     httpOnly: true,
     expires: new Date(Date.now() + oneDay),
     secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
   });
   res.status(StatusCodes.OK).json({ msg: 'user logged in' });
 };
@@ -40,6 +41,8 @@ export const logout = (_req: Request, res: Response): void => {
   res.cookie('token', 'logout', {
     httpOnly: true,
     expires: new Date(Date.now()),
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
   });
   res.status(StatusCodes.OK).json({ msg: 'user logged out!' });
 };
