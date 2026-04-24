@@ -250,8 +250,8 @@ Before running this application locally, make sure you have the following instal
 
 ## Installation
 
-1. **Clone the repository**
    ```bash
+1. **Clone the repository**
    git clone https://github.com/tauseefiqbal/jobify-mern-jwt-sc-js.git
    cd jobify-mern-jwt-sc-js
    ```

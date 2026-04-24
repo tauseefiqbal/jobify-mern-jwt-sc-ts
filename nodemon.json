@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "server.ts",
+    "controllers",
+    "routes",
+    "middleware",
+    "models",
+    "utils",
+    "errors",
+    "types"
+  ],
+  "ext": "ts,json",
+  "exec": "node --import tsx server.ts"
+}

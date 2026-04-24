@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "sourceMap": true,
+    "noEmit": false,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false,
+    "types": ["node"]
+  },
+  "include": [
+    "server.ts",
+    "populate.ts",
+    "changeAdminPassword.ts",
+    "controllers/**/*.ts",
+    "errors/**/*.ts",
+    "middleware/**/*.ts",
+    "models/**/*.ts",
+    "routes/**/*.ts",
+    "utils/**/*.ts",
+    "types/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "client", "dist"]
+}
