@@ -156,7 +156,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job tracking application th
 
 The application is live and deployed on Render.
 
-🔗 **Live URL:** [https://jobify-mern-jwt-sc-js-bzr7.onrender.com/](https://jobify-mern-jwt-sc-js-bzr7.onrender.com/)
+🔗 **Live URL:** [https://jobify-mern-jwt-sc-ts.onrender.com/](https://jobify-mern-jwt-sc-ts.onrender.com/)
 
 > **Note:** The app is hosted on Render's starter plan.
 
@@ -252,8 +252,8 @@ Before running this application locally, make sure you have the following instal
 
    ```bash
 1. **Clone the repository**
-   git clone https://github.com/tauseefiqbal/jobify-mern-jwt-sc-js.git
-   cd jobify-mern-jwt-sc-js
+   git clone https://github.com/tauseefiqbal/jobify-mern-jwt-sc-ts 
+   cd jobify-mern-jwt-sc-ts
    ```
 
 2. **Install dependencies for both server and client**
