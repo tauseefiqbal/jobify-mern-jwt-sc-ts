@@ -38,7 +38,7 @@ app.use(
   })
 );
 
-app.use(express.static(path.resolve(__dirname, './client/dist')));
+app.use(express.static(path.resolve(__dirname, '../client/dist')));
 app.use(cookieParser());
 app.use(express.json());
 app.use(helmet());
@@ -53,7 +53,7 @@ app.use('/api/v1/users', authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 
 app.get('*', (_req: Request, res: Response) => {
-  res.sendFile(path.resolve(__dirname, './client/dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '../client/dist', 'index.html'));
 });
 
 app.use(errorHandlerMiddleware);
