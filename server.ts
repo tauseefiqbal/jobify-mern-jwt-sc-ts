@@ -44,10 +44,6 @@ app.use(express.json());
 app.use(helmet());
 app.use(mongoSanitize());
 
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Hello World');
-});
-
 app.get('/api/v1/test', (_req: Request, res: Response) => {
   res.json({ msg: 'test route' });
 });
