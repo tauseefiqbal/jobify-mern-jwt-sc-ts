@@ -154,11 +154,11 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job tracking application th
 
 ## Deployment
 
-The application is live and deployed on Render.
+The application is live and deployed on Vercel.
 
-🔗 **Live URL:** [https://jobify-mern-jwt-sc-ts.onrender.com/](https://jobify-mern-jwt-sc-ts.onrender.com/)
+🔗 **Live URL:** [https://jobify-mern-jwt-sc-ts.vercel.app/](https://jobify-mern-jwt-sc-ts.vercel.app/)
 
-> **Note:** The app is hosted on Render's starter plan.
+> **Note:** The app is hosted on Vercel's starter plan.
 
 ---
 
